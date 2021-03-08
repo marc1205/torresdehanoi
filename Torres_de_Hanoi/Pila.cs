@@ -8,15 +8,10 @@ namespace Torres_de_Hanoi
 {
     class Pila
     {
-        public int Size { get; set; }
-        /* TODO: Elegir tipo de Top
-        public int Top { get; set; }
-        public String Top { get; set; }        
-        */
-        /* TODO: Elegir tipo de Elementos
-        public Disco[] Elementos { get; set; }
-        public List<Disco> Elementos { get; set; }
-        */
+        public int Size { get; set; } //representa la quantitat de palos que hi ha en una pila
+        public int Top { get; set; } //representa el disco que està dalt de tot de la pila
+        public List<Disco> Elementos { get; set; } //representa el numero de discos que hi ha en una pila
+
 
         /* TODO: Implementar métodos */
         public Pila()
@@ -24,19 +19,31 @@ namespace Torres_de_Hanoi
 
         }
 
-        public void push(Disco d)
+        public void push(Disco d) //permet colocar un disco en una pila
         {
-
+            Elementos.Add(d);
+            Size++;
+            Top = d.Valor;
         }
 
-        public Disco pop()
+        public Disco pop() //permet extraure el disco superior de una pila i l'eliminem
         {
-            return null;
+            Disco borrat = Elementos[Size-1];
+            Elementos.Remove(Elementos[Size - 1]);
+            Size--;
+            Top--;
+            return borrat;
         }                
 
-        public bool isEmpty()
+        public bool isEmpty() //ens informa si una fila està buida
         {
-            return true;
+            if ( Size == 0)
+            {
+                return true;
+            }
+            else{
+                return false;
+            }
         }
 
     }
