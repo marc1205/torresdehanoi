@@ -29,7 +29,7 @@ namespace Torres_de_Hanoi
         public Disco pop() //permet extraure el disco superior de una pila i l'eliminem
         {
             Disco borrat = Elementos[Size-1];
-
+             
             Elementos.Remove(Elementos[Size - 1]);
             Size--;
             Top--;
