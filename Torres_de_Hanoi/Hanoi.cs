@@ -8,18 +8,22 @@ namespace Torres_de_Hanoi
 {
     class Hanoi
     {
-        /*TODO: Implementar métodos*/
+        //implementem el mover_disco()
         public void mover_disco(Pila a, Pila b)
         {
             Disco d;
+            //si el disco de dalt de la pila a és més xicotet que el de la pila b; o la pila b està buida; 
+            //i si la pila a conté discos:
             if ( ((a.Top < b.Top) || ( b.isEmpty() == true)) && (a.isEmpty()==false))
             {
+                //si hi ha disco, que l'agafe de dalt de a i l'afegisca a la pila b.
                 d = a.pop();
                 if( d != null)
                 {
                     b.push(d);
                 }
             }
+            //si no: si hi ha, que agafe el disco de dalt de b i l'afegisca a la pila a.
             else
             {
                 d = b.pop();
@@ -30,6 +34,7 @@ namespace Torres_de_Hanoi
             }
         }
 
+        //implementem l'algoritme iteratiu
         public int iterativo(int n, Pila ini, Pila fin, Pila aux)
         {
             int m = 0;

@@ -8,7 +8,7 @@ namespace Torres_de_Hanoi
 {
     class Pila
     {
-        public int Size { get; set; } //representa la quantitat de palos que hi ha en una pila
+        public int Size { get; set; } //representa la quantitat de discos que hi ha en una pila
         public int Top { get; set; } //representa el disco que està dalt de tot de la pila
         public List<Disco> Elementos { get; set; } //representa el numero de discos que hi ha en una pila
 
