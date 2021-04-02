@@ -38,8 +38,8 @@ namespace Torres_de_Hanoi
 
             Hanoi iniciar = new Hanoi();
             int m = iniciar.iterativo(numDiscos, ini, fin, aux);
-
-            Console.WriteLine(Environment.NewLine);
+            
+            
             if( m > 0)
             {
                 Console.WriteLine("El numero de movimientos es: " + m);
