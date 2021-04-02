@@ -16,7 +16,7 @@ namespace Torres_de_Hanoi
         /* TODO: Implementar métodos */
         public Pila()
         {
-
+            Elementos = new List<Disco>();
         }
 
         public void push(Disco d) //permet colocar un disco en una pila
@@ -28,12 +28,27 @@ namespace Torres_de_Hanoi
 
         public Disco pop() //permet extraure el disco superior de una pila i l'eliminem
         {
-            Disco borrat = Elementos[Size-1];
-             
-            Elementos.Remove(Elementos[Size - 1]);
-            Size--;
-            Top--;
-            return borrat;
+            if ( Size > 0)
+            {
+                Disco borrat = Elementos[Size - 1];
+                Elementos.Remove(Elementos[Size - 1]);
+                Size--;
+                if( Size > 0)
+                {
+                    Disco dalt = Elementos[Size - 1];
+                    Top = dalt.Valor;
+                }
+                else
+                {
+                    Top = 0;
+                }
+                return borrat;
+            }
+            else
+            {
+                return null;
+            }
+            
         }                
 
         public bool isEmpty() //ens informa si una fila està buida
@@ -46,6 +61,5 @@ namespace Torres_de_Hanoi
                 return false;
             }
         }
-
     }
 }
