@@ -8,6 +8,7 @@ namespace Torres_de_Hanoi
 {
     class Hanoi
     {
+        
         //implementem el mover_disco()
         public void mover_disco(Pila a, Pila b)
         {
@@ -77,26 +78,43 @@ namespace Torres_de_Hanoi
             return m;
         }
 
+        private int movimientos; //variable global la qual guarda el numero de moviments que al final tornarem 
         //implementem l'algoritme recursiu
         public int recursivo(int n, Pila ini, Pila fin, Pila aux)
         {
-            int m = 0;
-            //while (fin.Size != n)
-            //{
-                if ( n == 1 )
-                {
-                    mover_disco(ini, fin);
-                    m++;
-                }
-                while( n != 1)
-                {
-                    recursivo((n-1), ini, aux, fin);
-                    mover_disco(ini, fin);
-                    m++;
-                    recursivo((n-1), aux, fin, ini);
-                }
-            //}
-            return m;
+            if ( n <= 0)
+            {
+                return 0;
+            }
+            if ( n == 1 )
+            {
+                mover_disco(ini, fin);
+                movimientos++;
+            }
+            else
+            {
+                recursivo((n-1), ini, aux, fin);
+                mover_disco(ini, fin);
+                movimientos++;
+                recursivo((n-1), aux, fin, ini);
+            }
+            return movimientos;
         }
+
+        //public void recursivo2(int n, Pila ini, Pila fin, Pila aux, ref int m) //ref int m == puntero que em tornarà el valor de m
+        //{
+        //    if (n == 1)
+        //    {
+        //        mover_disco(ini, fin);
+        //        m++;
+        //    }
+        //    else
+        //    {
+        //        recursivo2((n - 1), ini, aux, fin, ref m);
+        //        mover_disco(ini, fin);
+        //        m++;
+        //        recursivo2((n - 1), aux, fin, ini, ref m);
+        //    }
+        //}
     }
 }

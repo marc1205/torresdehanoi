@@ -26,7 +26,7 @@ namespace Torres_de_Hanoi
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Dime el metodo que desa usar: Pulsa 1 o 2. Donde 1 es para el método Iterativo y 2 es para el método Recursivo: ");
+            Console.WriteLine("Dime el método que desa usar: Pulsa 1 para usar el método Iterativo, o cualquier otro número para el método Recursivo: ");
             int numero = Int32.Parse(Console.ReadLine());
 
             //creem les tres piles que anem a gastar
@@ -45,20 +45,20 @@ namespace Torres_de_Hanoi
 
             Hanoi iniciar = new Hanoi(); //iniciem hanoi
 
-            
-
-            if( numero == 1)
+            if (numero == 1)
             {
                 int m = iniciar.iterativo(numDiscos, ini, fin, aux); //m serà el número total de moviments
                 Console.WriteLine("El numero de movimientos es: " + m);
             }
             else
             {
-                int m = iniciar.recursivo(numDiscos, ini, fin, aux); //m serà el número total de moviments
-                Console.WriteLine("El numero de movimientos es: " + m);
-            }
-            
+                int x = iniciar.recursivo(numDiscos, ini, fin, aux); //m serà el número total de moviments
+                Console.WriteLine("El numero de movimientos es: " + x);
 
+                //int m = 0;
+                //iniciar.recursivo2(numDiscos, ini, fin, aux, ref m); //m serà el número total de moviments
+                // Console.WriteLine("El numero de movimientos es: " + m);
+            }
             // Keep the console window open in debug mode.
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
